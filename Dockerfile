@@ -26,6 +26,7 @@ RUN \
   # regardless of whatever dependencies get added
   addgroup -g ${GID} go && \
   adduser -D -u ${UID} -s /bin/bash -G go go && \
+  addgroup go root && \
   apk --no-cache --wait 30 upgrade && \
   apk add --wait 30 --no-cache openjdk8-jre-base git mercurial subversion openssh-client bash curl && \
   # download the zip file
